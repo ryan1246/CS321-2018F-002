@@ -47,22 +47,7 @@ public class GameClient {
      * Only should be called once when the game is beginning
      */
     public void gameTimer(){
-        TimerTask timerTask = new TimerTask(){
-            public void run(){
-                try{
-                    remoteGameInterface.leave(playerName);
-                    runListener = false;
-                    System.out.println("User has been inactive for 5 minutes.. logging off");
-                    timer.cancel();
-                    System.exit(-1);
-                }
-                catch (RemoteException ex) {
-                    Logger.getLogger(GameClient.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        };
-        timer = new Timer();
-        timer.schedule(timerTask, 300000);
+        
     }
 
     /**
@@ -70,24 +55,7 @@ public class GameClient {
      * Should be called after every input using update();
      */
     public void update(){
-        TimerTask timerTask = new TimerTask(){
-            public void run(){
-                try{
-                    remoteGameInterface.leave(playerName);
-                    runListener = false;
-                    System.out.println("User has been inactive for 5 minutes.. logging off");
-                    timer.cancel();
-                    System.exit(-1);
-                }
-                catch (RemoteException ex) {
-                    Logger.getLogger(GameClient.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        };
-        timer.cancel();
-        timer.purge();
-        timer = new Timer();
-        timer.schedule(timerTask, 300000); //resets timer to 5 minutes
+        
     }
 
     /**

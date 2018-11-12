@@ -43,7 +43,7 @@ public class Leaderboard {
 	}
 	
 	public String getBoard() {
-		String head = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRock-Paper-Scissors Global Leaderboard:\n";
+		String head = "\n\n\n\n\n\n\nRock-Paper-Scissors Global Leaderboard:\n";
 		PlayerScore playerScore = null;
 		String rank = null;
 		String title = null;
@@ -62,9 +62,10 @@ public class Leaderboard {
 			longestLossStreak = String.valueOf(playerScore.getLongestLossStreak());
 			//currentLossStreak = String.format("%-2d", playerScore.getCurrentLossStreak());
 			head+="\n===============================================================\n";
-			head += ("Rank:" + rank + "    Name:" + playerScore.getName() +"\nLongest Win Streak:" + longestWinStreak + "      Current:" +playerScore.getCurrentWinStreak()+ " \nLongest Loss Streak:" + longestLossStreak +  "     Current:" +playerScore.getCurrentLossStreak() + "\nScore:" + score + "\nTitle: " + title);
+			head += ("Rank:" + rank + "    Name:" + playerScore.getName() +"\nLongest Win Streak:" + longestWinStreak + "      Current Win Streak:" +playerScore.getCurrentWinStreak()+ " \nLongest Loss Streak:" + longestLossStreak +  "     Current Loss Streak:" +playerScore.getCurrentLossStreak() + "\nScore:" + score + "\nTitle: " + title);
 			//head += ("Rank: " + rank + " | Longest Win Streak: " + longestWinStreak + " | Current Win Streak: " + currentWinStreak + " | Longest Loss Streak: " + longestLossStreak + " | Current Loss Streak: " + currentLossStreak + " | Score: " + score + "Title: " + title + " | Name: " + playerScore.getName() + "\n");
 		}
+		head+="\n===============================================================\n";
 		return head;
 	}
 	
@@ -82,7 +83,6 @@ public class Leaderboard {
 			return "noob";
 		return titles[rank];
 	}
-<<<<<<< HEAD
   // Added by An
   public String getTopTen() {
       String topTen = "\nRock-Paper-Scissors Global Top Ten RPS Ranking:\n\n";
@@ -135,15 +135,12 @@ public class Leaderboard {
       }
       return topTen;
   }
-=======
 	
 	public int getPlayerRank(String name) {
-		for (PlayerScore score : this.leaderboard) {
+		for (PlayerScore score : this.board) {
 			if (score.getName().equals(name))
-				return leaderboard.indexOf(score)+1;
+				return board.indexOf(score)+1;
 		}
 		return -1;
 	}
-	
->>>>>>> pullRequest_811
 }

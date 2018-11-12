@@ -82,6 +82,7 @@ public class Leaderboard {
 			return "noob";
 		return titles[rank];
 	}
+<<<<<<< HEAD
   // Added by An
   public String getTopTen() {
       String topTen = "\nRock-Paper-Scissors Global Top Ten RPS Ranking:\n\n";
@@ -134,4 +135,15 @@ public class Leaderboard {
       }
       return topTen;
   }
+=======
+	
+	public int getPlayerRank(String name) {
+		for (PlayerScore score : this.leaderboard) {
+			if (score.getName().equals(name))
+				return leaderboard.indexOf(score)+1;
+		}
+		return -1;
+	}
+	
+>>>>>>> pullRequest_811
 }

@@ -118,6 +118,7 @@ public interface GameCoreInterface {
     public void checkBoard(String player);
     public String tutorial(String name);
     public void topTen(String name);
+    public void getRank(String player);
 //Rock Paper Scissors Battle Code here--------------------------------------
 
     /* START 405_ignore */

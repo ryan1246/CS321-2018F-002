@@ -1758,7 +1758,7 @@ if(playerSending.searchIgnoredBy(name2)){
            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
            Date date = new Date();
            String result = (b.getP1Score() > b.getP2Score()) ? b.getPlayer1() : ((b.getP1Score() < b.getP2Score()) ? b.getPlayer2() : "TIE");
-           String logItem = MessageFormat.format("[{0}] [{4} Round RPS Battle] - Player1: {1} (Challenger) | Player2: {2} (Challenged) | Result: {3}",date,b.getPlayer1(),b.getPlayer2(),result,b.getMaxRounds());
+           String logItem = MessageFormat.format("[{0}] [{4} Round RPS Battle] - Player1: {1} (Challenger) | Player2: {2} (Challenged) | Result: {3}\n",date,b.getPlayer1(),b.getPlayer2(),result,b.getMaxRounds());
            writer.write(logItem);
            writer.close();
        }
